@@ -26,11 +26,11 @@ logger = logging.getLogger(__name__)
 class NekoSpy(loader.Module):
     """Sends you deleted and / or edited messages from selected users"""
 
-    rei = "<emoji document_id=5409143295039252230>👩‍🎤</emoji>"
+    rei = "<emoji document_id=5350606391193124570>👌</emoji>"
     groups = "<emoji document_id=6037355667365300960>👥</emoji>"
     pm = "<emoji document_id=6048540195995782913>👤</emoji>"
 
-    strings = {
+    strings = {/
         "name": "NekoSpy",
         "state": f"{rei} <b>Spy mode is now {{}}</b>",
         "spybl": f"{rei} <b>Current chat added to blacklist for spying</b>",
@@ -687,11 +687,11 @@ class NekoSpy(loader.Module):
     async def client_ready(self):
         channel, _ = await utils.asset_channel(
             self._client,
-            "hikka-nekospy",
+            "SodaSpy",
             "Deleted and edited messages will appear there",
             silent=True,
             invite_bot=True,
-            avatar="https://pm1.narvii.com/6733/0e0380ca5cd7595de53f48c0ce541d3e2f2effc4v2_hq.jpg",
+            avatar="https://raw.githubusercontent.com/psleiny/SodaLEiNY/main/Images/plyusheva-anime-lyalka-ayanami-rey-ayanami-rei-20-sm_eb6634e42c46be1_500x500.webp.jpg",
             _folder="hikka",
         )
 
