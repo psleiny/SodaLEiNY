@@ -50,7 +50,7 @@ class SwitchWordsMod(loader.Module):
             await message.edit(text)
 
     async def srucmd(self, message):
-        """Теж саме, але на москальскій<emoji document_id=5343887425959640737>💩</emoji>
+        """Теж саме, але на москальскій💩
         """
         RuKeys = """ёйцукенгшщзхъфывапролджэячсмитьбю.Ё"№;%:?ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭ/ЯЧСМИТЬБЮ,"""
         EnKeys = """`qwertyuiop[]asdfghjkl;'zxcvbnm,./~@#$%^&QWERTYUIOP{}ASDFGHJKL:"|ZXCVBNM<>?"""
