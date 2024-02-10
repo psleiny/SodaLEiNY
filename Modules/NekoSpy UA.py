@@ -30,7 +30,7 @@ class NekoSpy(loader.Module):
     groups = "<emoji document_id=6037355667365300960>👥</emoji>"
     pm = "<emoji document_id=6048540195995782913>👤</emoji>"
 
-    strings = {/
+    strings = {
         "name": "NekoSpy",
         "state": f"{rei} <b>Spy mode is now {{}}</b>",
         "spybl": f"{rei} <b>Current chat added to blacklist for spying</b>",
