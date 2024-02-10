@@ -86,7 +86,7 @@ class NekoSpy(loader.Module):
         "cfg_save_sd": "Save self-destructing media",
     }
 
-    strings_uk = {
+    strings_ua = {
         "on": "Працює",
         "off": "Не працює",
         "state": f"{rei} <b>Режим стеження тепер {{}}</b>",
@@ -699,7 +699,7 @@ class NekoSpy(loader.Module):
         self._tl_channel = channel.id
 
     @loader.command(
-        uk_doc=(
+        ua_doc=(
              "• Хто я? • Аянамі Рей. • А хто ти? • Аянамі Рей. • Ти теж Аянамі Рей? •"
              "Так. Я та, кого знають як Аянамі Рей. • Ми всі ті, кого знають, як Аянамі"
              "Рей. • Як вони всі можуть бути мною? • Просто тому що інші звуть нас"
@@ -759,7 +759,7 @@ class NekoSpy(loader.Module):
         self.set("state", not self.get("state", False))
 
     @loader.command(
-        uk_doc="Додати / видалити чат з списку ігнора",
+        ua_doc="Додати / видалити чат з списку ігнора",
         de_doc="Chat zur Ignorierliste hinzufügen / entfernen",
         uz_doc="Chatni qo'shish / olib tashlash",
         tr_doc="Sohbeti engelleme listesine ekle / kaldır",
@@ -778,7 +778,7 @@ class NekoSpy(loader.Module):
             await utils.answer(message, self.strings("spybl"))
 
     @loader.command(
-        uk_doc="Очистити чорний список",
+        ua_doc="Очистити чорний список",
         de_doc="Schwarze Liste leeren",
         uz_doc="Qora ro'yxatni tozalash",
         tr_doc="Siyah listeyi temizle",
@@ -792,7 +792,7 @@ class NekoSpy(loader.Module):
         await utils.answer(message, self.strings("spybl_clear"))
 
     @loader.command(
-        uk_doc="Додати / видалити чат з білого списку",
+        ua_doc="Додати / видалити чат з білого списку",
         de_doc="Chat zur Whitelist hinzufügen / entfernen",
         uz_doc="Chatni o'qish ro'yxatiga qo'shish / olib tashlash",
         tr_doc="Sohbeti beyaz listeye ekle / kaldır",
@@ -811,7 +811,7 @@ class NekoSpy(loader.Module):
             await utils.answer(message, self.strings("spywl"))
 
     @loader.command(
-        uk_doc="Очистити білий список",
+        ua_doc="Очистити білий список",
         de_doc="Whitelist leeren",
         uz_doc="O'qish ro'yxatini tozalash",
         tr_doc="Beyaz listeyi temizle",
@@ -840,7 +840,7 @@ class NekoSpy(loader.Module):
         )
 
     @loader.command(
-        uk_doc="Показати поточну конфігурацію спай-мода",
+        ua_doc="Показати поточну конфігурацію спай-мода",
         de_doc="Aktuelle Spy-Modus-Konfiguration anzeigen",
         uz_doc="Spy rejimining hozirgi konfiguratsiyasini ko'rsatish",
         tr_doc="Spy modu geçerli yapılandırmasını göster",
