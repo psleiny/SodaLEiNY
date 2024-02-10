@@ -34,7 +34,7 @@ class ChatGPT(loader.Module):
         ),
     }
 
-    strings_uk = {
+    strings_ua = {
         "no_args": (
             "<emoji document_id=5240241223632954241>🚫</emoji> <b>Не вказані"
             " аргументи</b>"
@@ -129,7 +129,7 @@ class ChatGPT(loader.Module):
         return resp["choices"][0]["message"]["content"]
 
     @loader.command(
-        uk_doc="<питання> - задати питання",
+        ua_doc="<питання> - задати питання",
         it_doc="<domanda> - Fai una domanda",
         fr_doc="<question> - Posez une question",
         de_doc="<frage> - Stelle eine Frage",
