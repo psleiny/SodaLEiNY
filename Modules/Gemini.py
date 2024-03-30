@@ -52,7 +52,7 @@ class Gemini(loader.Module):
         asyncio.create_task(self.click_for_stats())
 
     @loader.command()
-    async def gemini(self, message):
+    async def gmi(self, message):
         """Задати питання до Gemini"""
         q = utils.get_args_raw(message)
         if not q:
