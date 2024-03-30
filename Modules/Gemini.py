@@ -61,14 +61,13 @@ class Gemini(loader.Module):
         if not self.config['api_key']:
             return await utils.answer(message, self.strings["no_token"].format(self.get_prefix()))
 
-        await utils.answer(message, self.strings['asking_gemini'])
+        # Сначала отправляем сообщение "Питаю у Gemini..."
+        sent_message = await message.respond(self.strings['asking_gemini'])
 
-        # Не тупіть, ЦЕ НЕ CHATGPT, це Gemini.
-        # Але тому що баниться геолокація ви б не змогли використовувати офіційну лібу від google.
-
+        # Затем делаем запрос к Gemini
         client = OpenAI(
             api_key=self.config['api_key'],
-            base_url="https://my-openai-gemini-beta-two.vercel.app/v1" # Для роботи з Gemini а не з ChatGPT
+            base_url="https://my-openai-gemini-beta-two.vercel.app/v1" # Для роботи з Gemini а не с ChatGPT
         )
 
         chat_completion = client.chat.completions.create(
@@ -81,4 +80,6 @@ class Gemini(loader.Module):
             model="gpt-3.5-turbo",
         )
 
-        return await utils.answer(message, self.config['text'].format(question=q, answer=chat_completion.choices[0].message.content))
+        # Редактируем отправленное сообщение с ответом от Gemini
+        await sent_message.edit(self.config['text'].format(question=q, answer=chat_completion.choices[0].message.content))
+
