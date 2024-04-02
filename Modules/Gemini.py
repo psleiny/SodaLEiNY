@@ -61,10 +61,10 @@ class Gemini(loader.Module):
         if not self.config['api_key']:
             return await utils.answer(message, self.strings["no_token"].format(self.get_prefix()))
 
-        # Сначала отправляем сообщение "Питаю у Gemini..."
+        await message.delete()
+
         sent_message = await message.respond(self.strings['asking_gemini'])
 
-        # Затем делаем запрос к Gemini
         client = OpenAI(
             api_key=self.config['api_key'],
             base_url="https://my-openai-gemini-beta-two.vercel.app/v1" # Для роботи з Gemini а не с ChatGPT
@@ -80,6 +80,4 @@ class Gemini(loader.Module):
             model="gpt-3.5-turbo",
         )
 
-        # Редактируем отправленное сообщение с ответом от Gemini
         await sent_message.edit(self.config['text'].format(question=q, answer=chat_completion.choices[0].message.content))
-
