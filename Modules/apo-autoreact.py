@@ -116,8 +116,8 @@ class ApodiktumAutoReactMod(loader.Module):
         "_cfg_doc_shuffle_chats": (
             "Список чатів, у яких перемішується список емодзі."
         ),
-        "_cls_doc": "Автореакція на повідомлення.\nПеревірте .config apodiktum autoreact.",
-        "_cmd_doc_cautoreact": "Це відкриє налаштування модуля.",
+        "_cls_doc": "міша гей Автореакція на повідомлення.\nПеревірте .config apodiktum autoreact.",
+        "_cmd_doc_cautoreact": "Це відкриє налаштування модуля міша гей",
     }
 
     all_strings = {
