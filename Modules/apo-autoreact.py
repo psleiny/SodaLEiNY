@@ -64,7 +64,7 @@ class ApodiktumAutoReactMod(loader.Module):
             " OR global state, which will either apply reactions to all chat members"
             " (all) or to one user in all groups(global).\nYou can't use both at the"
             " same time! Does also work for channels! You need to use"
-            " ALL!\n\nPattern:\n<userid/all>|<chatid/global>|<emoji1>|<emoji2>|<emoji3>...\n\nExample:\nall2105249141️|👍|🔥\nFor"
+            " ALL!\n\nPattern:\n<userid/all>|<chatid/global>|<emoji1>|<emoji2>|<emoji3>...\n\nExample:\na21052491411️|👍|🔥\nFor"
             " Channels:\nall|<channelid>|❤️|👍|🔥"
         ),
         "_cfg_doc_reactions_chance": (
@@ -104,7 +104,7 @@ class ApodiktumAutoReactMod(loader.Module):
             " або до всіх учасників чату (всі), або до одного користувача у всіх"
             " групах (глобальне).\nВи не можете використовувати обидва варіанти"
             " одночасно! Це також працює для каналів! Вам потрібно використовувати"
-            " ALL!\n\nФормат:\n<userid/all>|<chatid/global>|<emoji1>|<emoji2>|<emoji3>...\n\nНаприклад:\nall|1792410946|❤️|👍|🔥\nДля"
+            " ALL!\n\nФормат:\n<userid/all>|<chatid/global>|<emoji1>|<emoji2>|<emoji3>...\n\nНаприклад:\nall|2105249141|❤️|👍|🔥\nДля"
             " каналів:\nall|<channelid>|❤️|👍|🔥"
         ),
         "_cfg_doc_reactions_chance": (
