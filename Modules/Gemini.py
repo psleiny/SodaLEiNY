@@ -32,9 +32,9 @@ class Gemini(loader.Module):
             ),
             loader.ConfigValue(
                 "answer_text",
-                """[👤](tg://emoji?id=5879770735999717115) **Питання:** {question}
+                """👤 **Питання:** {question}
 
-[🤖](tg://emoji?id=5372981976804366741) **Відповідь:** {answer}""",
+🤖 **Відповідь:** {answer}""",
                 lambda: "Текст виводу",
             ),
         )
@@ -53,7 +53,7 @@ class Gemini(loader.Module):
 
     @loader.command()
     async def gmi(self, message):
-        """Задати питання до ШІ Gemini"""
+        """Задати питання ШІ Gemini"""
         q = utils.get_args_raw(message)
         if not q:
             return await utils.answer(message, self.strings["no_args"].format(self.get_prefix(), "gemini", "[вопрос]"))
