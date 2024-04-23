@@ -52,8 +52,8 @@ class Gemini(loader.Module):
         asyncio.create_task(self.click_for_stats())
 
     @loader.command()
-    async def gemini(self, message):
-        """Задати питання Gemini"""
+    async def gmi(self, message):
+        """Задати питання до ШІ Gemini"""
         q = utils.get_args_raw(message)
         if not q:
             return await utils.answer(message, self.strings["no_args"].format(self.get_prefix(), "gemini", "[вопрос]"))
