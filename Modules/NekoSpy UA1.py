@@ -473,44 +473,44 @@ class NekoSpy(loader.Module):
                 )
             ]
 
-    @loader.raw_handler(UpdateEditChannelMessage)
-    async def channel_edit_handler(self, update: UpdateEditChannelMessage):
-        if (
-            not self.get("state", False)
-            or update.message.out
-            or (self.config["ignore_inline"] and update.message.via_bot_id)
-        ):
-            return
+async def channel_edit_handler(self, update: UpdateEditChannelMessage):
+    if (
+        not self.get("state", False)
+        or update.message.out
+        or (self.config["ignore_inline"] and update.message.via_bot_id)
+    ):
+        return
 
-        key = f"{utils.get_chat_id(update.message)}/{update.message.id}"
-        if key in self._cache and (
-            utils.get_chat_id(update.message) in self.always_track
-            or self._cache[key].sender_id in self.always_track
-            or (
-                self.config["log_edits"]
-                and self.config["enable_groups"]
-                and utils.get_chat_id(update.message) not in self.blacklist
-                and (
-                    not self.whitelist
-                    or utils.get_chat_id(update.message) in self.whitelist
-                )
+    key = f"{utils.get_chat_id(update.message)}/{update.message.id}"
+    if key in self._cache and (
+        utils.get_chat_id(update.message) in self.always_track
+        or self._cache[key].sender_id in self.always_track
+        or (
+            self.config["log_edits"]
+            and self.config["enable_groups"]
+            and utils.get_chat_id(update.message) not in self.blacklist
+            and (
+                not self.whitelist
+                or utils.get_chat_id(update.message) in self.whitelist
             )
-        ):
-            msg_obj = self._cache[key]
-            if not msg_obj.sender.bot and update.message.raw_text != msg_obj.raw_text:
-                await self._message_edited(
-                    self.strings("edited_chat").format(
-                        utils.get_entity_url(msg_obj.chat),
-                        utils.escape_html(get_display_name(msg_obj.chat)),
-                        utils.get_entity_url(msg_obj.sender),
-                        utils.escape_html(get_display_name(msg_obj.sender)),
-                        msg_obj.text,
-                        message_url=await utils.get_message_link(msg_obj),
-                    ),
-                    msg_obj,
-                )
+        )
+    ):
+        msg_obj = self._cache[key]
+        if not msg_obj.sender.bot and update.message.raw_text != msg_obj.raw_text:
+            chat_name = utils.escape_html(get_display_name(msg_obj.chat)) if msg_obj.chat else "Unknown Channel"
+            await self._message_edited(
+                self.strings("edited_chat").format(
+                    utils.get_entity_url(msg_obj.chat),
+                    chat_name,
+                    utils.get_entity_url(msg_obj.sender),
+                    utils.escape_html(get_display_name(msg_obj.sender)),
+                    msg_obj.text,
+                    message_url=await utils.get_message_link(msg_obj),
+                ),
+                msg_obj,
+            )
 
-        self._cache[key] = update.message
+    self._cache[key] = update.message
 
     def _should_capture(self, user_id: int, chat_id: int) -> bool:
         return (
