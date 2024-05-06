@@ -23,8 +23,8 @@ logger = logging.getLogger(__name__)
 
 
 @loader.tds
-class NekoSpy(loader.Module):
-    """Sends you deleted and / or edited messages from selected users"""
+class SodaSpy(loader.Module):
+    """Видалені або відредаговані повідомлення"""
 
     rei = "<emoji document_id=5350606391193124570>👌</emoji>"
     groups = "<emoji document_id=6037355667365300960>👥</emoji>"
