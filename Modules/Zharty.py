@@ -5,7 +5,7 @@ from random import choice
 
 from .. import loader, utils
 
-anekdoti = [
+zharty = [
     "— Як називається найдавніша держава геїв?\n— Глиномесопотамія",
     (
         "Перші признаки СНІДа:\n1) Різка біль у задньому проході.\n2) Важке дихання"
@@ -116,13 +116,13 @@ anekdoti = [
 
 
 @loader.tds
-class RandomJumoreska(loader.Module):
+class Zharty(loader.Module):
     """Відправляє рандомний анекдот."""
 
-    strings = {"name": "RandomJumoreska"}
+    strings = {"name": "Жарти"}
 
     @loader.command()
-    async def rndmjumoreska(self, m):
+    async def Жарт(self, m):
         "- видати рандомний анекдот."
-        randomjumor = random.choice(anekdoti)
+        randomjumor = random.choice(zharty)
         await utils.answer(m, f"<b>{randomjumor}</b>")
