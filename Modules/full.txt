@@ -2,3 +2,4 @@ ChatGPT UA
 Gemini
 NekoSpy UA old
 NekoSpy UA
+Zharty
