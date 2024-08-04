@@ -1,5 +1,3 @@
-# meta developer: @FAmods
-
 import asyncio
 import logging
 
