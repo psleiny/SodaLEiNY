@@ -1,0 +1,37 @@
+import logging
+from telegram import Bot
+from telegram.ext import CommandHandler, Updater
+
+# Вкажіть свій токен бота тут
+TOKEN = '7443661111:AAGNR0iNG6tkzfjU_S9MDDVFo4jk1GqQEuU'
+CHAT_ID =  -1002021717324 # Введіть ID чату
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def clear_chat(update, context):
+    if update.message.from_user.id != 5248568516:
+        update.message.reply_text("У вас немає прав на використання цієї команди.")
+        return
+
+    try:
+        bot = context.bot
+        messages = bot.get_chat(CHAT_ID).iter_messages()
+        for message in messages:
+            bot.delete_message(CHAT_ID, message.message_id)
+        update.message.reply_text("Чат успішно очищено.")
+    except Exception as e:
+        logger.error(f"Failed to delete messages: {e}")
+        update.message.reply_text("Не вдалося очистити чат.")
+
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+
+    dp.add_handler(CommandHandler('clear', clear_chat))
+
+    updater.start_polling()
+    updater.idle()
+
+if name == '__main__':
+    main()
