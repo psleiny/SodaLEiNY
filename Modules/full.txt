@@ -1,7 +1,6 @@
 ChatGPT UA
 Gemini
-NekoSpy UA old
-NekoSpy UA
+SodaSpy
 Zharty
 Аянамі рей
 Switch
