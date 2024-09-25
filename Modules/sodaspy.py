@@ -1,3 +1,5 @@
+# meta developer: @SodaModules
+
 __version__ = (1, 0, 28)
 
 import contextlib
@@ -23,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 
 @loader.tds
-class NekoSpy(loader.Module):
+class SodaSpy(loader.Module):
     """Sends you deleted and / or edited messages from selected users"""
 
     rei = "<emoji document_id=5350606391193124570>👌</emoji>"
@@ -31,7 +33,7 @@ class NekoSpy(loader.Module):
     pm = "<emoji document_id=6048540195995782913>👤</emoji>"
 
     strings = {
-        "name": "NekoSpy",
+        "name": "SodaSpy",
         "state": f"{rei} <b>Spy mode is now {{}}</b>",
         "spybl": f"{rei} <b>Current chat added to blacklist for spying</b>",
         "spybl_removed": f"{rei} <b>Current chat removed from blacklist for spying</b>",
