@@ -1,25 +1,6 @@
 __version__ = (0, 1, 29)
 
-
-# ▄▀█ █▄ █ █▀█ █▄ █ █▀█ ▀▀█ █▀█ █ █ █▀
-# █▀█ █ ▀█ █▄█ █ ▀█ ▀▀█   █ ▀▀█ ▀▀█ ▄█
-#
-#           © Copyright 2023
-#
-#        developed by @anon97945
-#
-#     https://t.me/apodiktum_modules
-#      https://github.com/anon97945
-#
-# 🔒 Licensed under the GNU GPLv3
-# 🌐 https://www.gnu.org/licenses/gpl-3.0.html
-
-# meta developer: @apodiktum_modules
-# meta banner: https://t.me/file_dumbster/11
-# meta pic: https://t.me/file_dumbster/13
-
-# scope: hikka_only
-# scope: hikka_min 1.3.3
+# meta developer: @SodaModules
 
 import asyncio
 import logging
@@ -34,14 +15,14 @@ logger = logging.getLogger(__name__)
 
 
 @loader.tds
-class ApodiktumAutoReactMod(loader.Module):
+class AutoReactMod(loader.Module):
     """
     AutoReact to messages.
     Check the `.config apodiktum autoreact`
     """
 
     strings = {
-        "name": "Apo-AutoReact",
+        "name": "AutoReact",
         "developer": "@anon97945",
         "_cfg_cst_auto_migrate": "Wheather to auto migrate defined changes on startup.",
         "_cfg_doc_delay": "The delay between reactions are send in seconds.",
