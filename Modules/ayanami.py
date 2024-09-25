@@ -1,3 +1,5 @@
+# meta developer: @SodaModules
+
 from .. import loader
 from asyncio import sleep
 
